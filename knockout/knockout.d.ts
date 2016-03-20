@@ -1,7 +1,7 @@
 ﻿// Type definitions for Knockout v3.2.0
 // Project: http://knockoutjs.com
 // Definitions by: Boris Yankov <https://github.com/borisyankov/>, Igor Oleinikov <https://github.com/Igorbek/>, Clément Bourgeois <https://github.com/moonpyk/>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 
 interface KnockoutSubscribableFunctions<T> {
@@ -30,9 +30,9 @@ interface KnockoutObservableArrayFunctions<T> {
     push(...items: T[]): void;
     shift(): T;
     unshift(...items: T[]): number;
-    reverse(): T[];
-    sort(): void;
-    sort(compareFunction: (left: T, right: T) => number): void;
+    reverse(): KnockoutObservableArray<T>;
+    sort(): KnockoutObservableArray<T>;
+    sort(compareFunction: (left: T, right: T) => number): KnockoutObservableArray<T>;
 
     // Ko specific
     [key: string]: KnockoutBindingHandler;
@@ -553,7 +553,7 @@ interface KnockoutComputedContext {
 // refactored types into a namespace to reduce global pollution
 // and used Union Types to simplify overloads (requires TypeScript 1.4)
 //
-declare module KnockoutComponentTypes {
+declare namespace KnockoutComponentTypes {
 
     interface Config {
         viewModel?: ViewModelFunction | ViewModelSharedInstance | ViewModelFactoryFunction | AMDModule;
@@ -562,6 +562,7 @@ declare module KnockoutComponentTypes {
     }
 
     interface ComponentConfig {
+        viewModel?: ViewModelFunction | ViewModelSharedInstance | ViewModelFactoryFunction | AMDModule;
         template: any;
         createViewModel?: any;
     }

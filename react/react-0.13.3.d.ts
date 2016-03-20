@@ -1,7 +1,7 @@
 // Type definitions for React v0.13.3
 // Project: http://facebook.github.io/react/
 // Definitions by: Asana <https://asana.com>, AssureSign <http://www.assuresign.com>, Microsoft <https://microsoft.com>
-// Definitions: https://github.com/borisyankov/DefinitelyTyped
+// Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 declare namespace __React {
     //
@@ -212,7 +212,7 @@ declare namespace __React {
         displayName?: string;
         propTypes?: ValidationMap<any>;
         contextTypes?: ValidationMap<any>;
-        childContextTypes?: ValidationMap<any>
+        childContextTypes?: ValidationMap<any>;
 
         getDefaultProps?(): P;
         getInitialState?(): S;
@@ -591,7 +591,7 @@ declare namespace __React {
         x2?: number | string;
         x?: number | string;
         y1?: number | string;
-        y2?: number | string
+        y2?: number | string;
         y?: number | string;
     }
 
@@ -1021,7 +1021,7 @@ declare module "react/addons" {
         displayName?: string;
         propTypes?: ValidationMap<any>;
         contextTypes?: ValidationMap<any>;
-        childContextTypes?: ValidationMap<any>
+        childContextTypes?: ValidationMap<any>;
 
         getDefaultProps?(): P;
         getInitialState?(): S;
@@ -1399,7 +1399,7 @@ declare module "react/addons" {
         x2?: number | string;
         x?: number | string;
         y1?: number | string;
-        y2?: number | string
+        y2?: number | string;
         y?: number | string;
     }
 
@@ -1735,7 +1735,7 @@ declare module "react/addons" {
         totalTime: number;
     }
 
-    module ReactPerf {
+    namespace ReactPerf {
         export function start(): void;
         export function stop(): void;
         export function printInclusive(measurements: Measurements[]): void;
@@ -1753,7 +1753,7 @@ declare module "react/addons" {
         new(): any;
     }
 
-    module ReactTestUtils {
+    namespace ReactTestUtils {
         export import Simulate = ReactSimulate;
 
         export function renderIntoDocument<P>(
@@ -1847,7 +1847,7 @@ declare module "react/addons" {
         (component: Component<any, any>, eventData?: SyntheticEventData): void;
     }
 
-    module ReactSimulate {
+    namespace ReactSimulate {
         export var blur: EventSimulator;
         export var change: EventSimulator;
         export var click: EventSimulator;
